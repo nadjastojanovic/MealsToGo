@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components/native";
 import { SvgXml } from "react-native-svg";
 
 import { Spacer } from "../../../components/spacer/spacer.component";
@@ -34,7 +33,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
 
   return (
     <RestaurantCard elevation={5}>
-      <RestaurantCardCover source={{ url: photos[0] }} />
+      <RestaurantCardCover key={name} source={{ url: photos[0] }} />
       <Info>
         <Text variant="label">{name}</Text>
         <Section>

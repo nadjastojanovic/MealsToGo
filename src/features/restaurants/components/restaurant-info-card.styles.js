@@ -1,5 +1,6 @@
 import styled from "styled-components/native";
 import { Card } from "react-native-paper";
+
 export const Info = styled.View`
   padding: ${(props) => props.theme.sizes[1]};
   padding-top: 0;
