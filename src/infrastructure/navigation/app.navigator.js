@@ -33,7 +33,7 @@ export const AppNavigator = () => (
       }}
     >
       <Tab.Screen
-        name="Restaurants"
+        name="RestaurantsScreen"
         component={RestaurantsNavigator}
         options={{
           tabBarIcon: ({ color, size }) => (
