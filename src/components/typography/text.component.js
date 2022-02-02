@@ -22,6 +22,7 @@ const error = (theme) => `
 `;
 
 const caption = (theme) => `
+    text-align: center;
     font-size: ${theme.fontSizes.caption};
     font-weight: ${theme.fontWeights.bold};
 `;
