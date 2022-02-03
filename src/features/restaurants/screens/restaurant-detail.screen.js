@@ -5,6 +5,7 @@ import { List } from "react-native-paper";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 
 import { SafeArea } from "../../../components/utils/safe-area.component";
+import { colors } from "../../../infrastructure/theme/colors";
 
 export const RestaurantDetailScreen = ({ route }) => {
   const [breakfastExpanded, setBreakfastExpanded] = useState(false);
@@ -19,7 +20,14 @@ export const RestaurantDetailScreen = ({ route }) => {
       <ScrollView>
         <List.Accordion
           title="Breakfast"
-          left={(props) => <List.Icon {...props} icon="bread-slice" />}
+          theme={colors}
+          left={(props) => (
+            <List.Icon
+              {...props}
+              icon="bread-slice"
+              color={colors.brand.primary}
+            />
+          )}
           expanded={breakfastExpanded}
           onPress={() => setBreakfastExpanded(!breakfastExpanded)}
         >
@@ -29,7 +37,14 @@ export const RestaurantDetailScreen = ({ route }) => {
 
         <List.Accordion
           title="Lunch"
-          left={(props) => <List.Icon {...props} icon="hamburger" />}
+          theme={colors}
+          left={(props) => (
+            <List.Icon
+              {...props}
+              icon="hamburger"
+              color={colors.brand.primary}
+            />
+          )}
           expanded={lunchExpanded}
           onPress={() => setLunchExpanded(!lunchExpanded)}
         >
@@ -40,7 +55,14 @@ export const RestaurantDetailScreen = ({ route }) => {
 
         <List.Accordion
           title="Dinner"
-          left={(props) => <List.Icon {...props} icon="food-variant" />}
+          theme={colors}
+          left={(props) => (
+            <List.Icon
+              {...props}
+              icon="food-variant"
+              color={colors.brand.primary}
+            />
+          )}
           expanded={dinnerExpanded}
           onPress={() => setDinnerExpanded(!dinnerExpanded)}
         >
@@ -51,7 +73,10 @@ export const RestaurantDetailScreen = ({ route }) => {
 
         <List.Accordion
           title="Drinks"
-          left={(props) => <List.Icon {...props} icon="cup" />}
+          theme={colors}
+          left={(props) => (
+            <List.Icon {...props} icon="cup" color={colors.brand.primary} />
+          )}
           expanded={drinksExpanded}
           onPress={() => setDrinksExpanded(!drinksExpanded)}
         >

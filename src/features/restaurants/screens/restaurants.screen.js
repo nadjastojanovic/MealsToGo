@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
-import { Text, FlatList, TouchableOpacity } from "react-native";
+import { FlatList, TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
-import { ActivityIndicator, Colors } from "react-native-paper";
+import { ActivityIndicator } from "react-native-paper";
 
 import { SafeArea } from "../../../components/utils/safe-area.component";
 import { Spacer } from "../../../components/spacer/spacer.component";
@@ -12,6 +12,7 @@ import { FavoritesContext } from "../../../services/favorites/favorites.context"
 import { Search } from "../components/search.component";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 import { FavoritesBar } from "../../../components/favorites/favorites-bar.component";
+import { colors } from "../../../infrastructure/theme/colors";
 
 const RestaurantList = styled(FlatList).attrs({
   contentContainerStyle: {
@@ -37,7 +38,7 @@ export const RestaurantsScreen = ({ navigation }) => {
     <SafeArea>
       {isLoading && (
         <LoadingContainer>
-          <Loading size={50} animating={true} color={Colors.blue300} />
+          <Loading size={50} animating={true} color={colors.brand.primary} />
         </LoadingContainer>
       )}
       <Search
