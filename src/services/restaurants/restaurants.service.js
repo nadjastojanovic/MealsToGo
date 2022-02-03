@@ -1,5 +1,6 @@
-import { mocks, mockImages } from "./mock";
 import camelize from "camelize";
+
+import { mocks, mockImages } from "./mock";
 
 export const restaurantsRequest = (location) => {
   return new Promise((resolve, reject) => {

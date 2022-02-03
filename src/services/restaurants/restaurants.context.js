@@ -4,9 +4,7 @@ import {
   restaurantsRequest,
   restaurantsTransform,
 } from "./restaurants.service";
-
 import { LocationContext } from "../location/location.context";
-import { locations } from "../location/location.mock";
 
 export const RestaurantsContext = createContext();
 

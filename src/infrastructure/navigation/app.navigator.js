@@ -1,15 +1,14 @@
 import React from "react";
+import { Text } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Ionicons } from "@expo/vector-icons";
-import { Text } from "react-native";
 
 import { SafeArea } from "../../components/utils/safe-area.component";
 import { colors } from "../../infrastructure/theme/colors";
 
 import { RestaurantsNavigator } from "./restaurants.navigator";
 import { MapScreen } from "../../features/map/screens/map.screen";
-import { ThemeProvider } from "styled-components";
 
 const Tab = createBottomTabNavigator();
 
