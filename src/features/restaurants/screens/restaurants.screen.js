@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react";
-import { FlatList, TouchableOpacity } from "react-native";
+import React, { useContext, useState, useRef, useEffect } from "react";
+import { FlatList, TouchableOpacity, Animated } from "react-native";
 import { ActivityIndicator } from "react-native-paper";
 import styled from "styled-components/native";
 
@@ -21,6 +21,29 @@ const RestaurantList = styled(FlatList).attrs({
     paddingRight: 8,
   },
 })``;
+
+const FadeInView = ({ duration = 1500, ...props }) => {
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    Animated.timing(fadeAnim, {
+      toValue: 1,
+      duration: duration,
+      useNativeDriver: true,
+    }).start();
+  }, [fadeAnim, duration]);
+
+  return (
+    <Animated.View
+      style={{
+        ...props.style,
+        opacity: fadeAnim,
+      }}
+    >
+      {props.children}
+    </Animated.View>
+  );
+};
 
 const Loading = styled(ActivityIndicator)`
   margin-left: -25px;
@@ -62,7 +85,9 @@ export const RestaurantsScreen = ({ navigation }) => {
               }
             >
               <Spacer position="bottom" size="large">
-                <RestaurantInfoCard restaurant={item} />
+                <FadeInView>
+                  <RestaurantInfoCard restaurant={item} />
+                </FadeInView>
               </Spacer>
             </TouchableOpacity>
           );

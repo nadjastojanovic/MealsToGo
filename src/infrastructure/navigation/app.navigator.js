@@ -7,16 +7,12 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { SafeArea } from "../../components/utils/safe-area.component";
 import { colors } from "../../infrastructure/theme/colors";
 
+import { SettingsNavigator } from "./settings.navigator";
 import { RestaurantsNavigator } from "./restaurants.navigator";
 import { MapScreen } from "../../features/map/screens/map.screen";
+import { SettingsScreen } from "../../features/settings/settings.screen";
 
 const Tab = createBottomTabNavigator();
-
-const Settings = () => (
-  <SafeArea>
-    <Text>Settings</Text>
-  </SafeArea>
-);
 
 export const AppNavigator = () => (
   <NavigationContainer>
@@ -52,8 +48,8 @@ export const AppNavigator = () => (
         }}
       />
       <Tab.Screen
-        name="Settings"
-        component={Settings}
+        name="SettingsScreen"
+        component={SettingsNavigator}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="settings" color={color} size={size} />
