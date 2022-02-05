@@ -1,10 +1,8 @@
 import React from "react";
-import { Text } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import { SafeArea } from "../../components/utils/safe-area.component";
 import { colors } from "../../infrastructure/theme/colors";
 
 import { SettingsNavigator } from "./settings.navigator";
@@ -30,7 +28,7 @@ export const AppNavigator = () => (
       }}
     >
       <Tab.Screen
-        name="RestaurantsScreen"
+        name="Restaurants"
         component={RestaurantsNavigator}
         options={{
           tabBarIcon: ({ color, size }) => (
@@ -48,7 +46,7 @@ export const AppNavigator = () => (
         }}
       />
       <Tab.Screen
-        name="SettingsScreen"
+        name="Settings"
         component={SettingsNavigator}
         options={{
           tabBarIcon: ({ color, size }) => (
