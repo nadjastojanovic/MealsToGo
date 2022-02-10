@@ -16,9 +16,9 @@ or copy `https://expo.dev/@nadjastojanov/MealsToGo` to your browser
   <img src="https://i.imgur.com/SjlTUUJ.png" width="200px" />
 </div>
 
-## 🌀 To Be Added
+## 🌀 To Do
 
 - Google Maps integration
 - Firebase authentication
 - Phone camera integration
-- Advanced settings
+- Enhance settings screen 
